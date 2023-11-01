@@ -18,17 +18,30 @@
                 <h1>
                     To Do List
                 </h1>
+                <div class="my-3 d-flex justify-content-center">
+                    <input type="text" class="form-control w-25" v-model="newTask">
+                    <button class="btn btn-success mx-2" @click="taskAdder">Nuova Task</button>
+                </div>
             </header>
             <main>
                 <div class="card">
                     <ul class="list-group list-group-flush" v-if="toDoList.length > 0">
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between" v-for="(task, index) in toDoList" :key="toDoList.id">
-                            <div>{{toDoList.task}}</div>
-                            <i class="fa-solid fa-x list-delete" @click="removeFromList(index)"></i>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between" v-for="(el, index) in toDoList" :key="toDoList.id">
+                            <div class="list-el"
+                            :class="{'done': toDoList.done}"
+                            @click="doneMarker(index)">
+                                {{el.task}}
+                            </div>
+                            <i class="fa-solid fa-x list-el" @click="removeFromList(index)"></i>
                         </li>
                     </ul>
-                    <div v-else class="text-center">
-                        <h4>Nessuna Task!</h4>
+                    <div v-else class="text-center py-3">
+                        <h3>
+                            Nessuna Task!
+                        </h3>
+                        <span>
+                            Ora è la tua occasione! Scappa!!!
+                        </span>
                     </div>
                 </div>
             </main>
