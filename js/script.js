@@ -6,8 +6,9 @@ const miaApp = createApp({
             toDoList: [
                 {
                     id: 1,
-                    task: 'chiama la nonna',
-                    done: false
+                    task: 'riordina la stanza',
+                    done: false,
+                    boh: 'boh'
                 },
                 {
                     id: 2,
@@ -28,12 +29,15 @@ const miaApp = createApp({
                     id: 5,
                     task: 'chiama la nonna',
                     done: false
-                },
+                }
             ],
             lastId: 5
         }
     },
     methods: {
+        removeFromList(el) {
+            this.toDoList.splice(el, 1)
+        }
 
     }
 }).mount('#app');

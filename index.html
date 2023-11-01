@@ -22,12 +22,12 @@
             <main>
                 <div class="card">
                     <ul class="list-group list-group-flush" v-if="toDoList.length > 0">
-                        <li class="list-group-item list-group-item-action d-flex justify-content-between">
-                            <div :class="{'done': toDoList.done}">{{toDoList.task}}</div>
-                            <i class="fa-solid fa-x"></i>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between" v-for="(task, index) in toDoList" :key="toDoList.id">
+                            <div>{{toDoList.task}}</div>
+                            <i class="fa-solid fa-x list-delete" @click="removeFromList(index)"></i>
                         </li>
                     </ul>
-                    <div v-else>
+                    <div v-else class="text-center">
                         <h4>Nessuna Task!</h4>
                     </div>
                 </div>

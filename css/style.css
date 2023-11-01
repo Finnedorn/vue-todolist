@@ -1,3 +1,7 @@
 .done {
     text-decoration: line-through;
 }
+
+.list-delete {
+    cursor: pointer;
+}
