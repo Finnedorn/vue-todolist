@@ -1,3 +1,16 @@
+*{
+    color: #524036;
+}
+
+body {
+    background-image: url(../img/ac-new-horizons-characters-pattern-3840x2160-1.jpg);
+    background-size: cover;
+}
+
+.logo {
+    width: 60px;
+}
+
 .done {
     text-decoration: line-through;
 }
@@ -5,3 +18,4 @@
 .list-el {
     cursor: pointer;
 }
+

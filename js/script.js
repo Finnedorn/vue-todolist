@@ -31,8 +31,7 @@ const miaApp = createApp({
                 }
             ],
             lastId: 5,
-            newTask: '',
-
+            newTask: ''
         }
     },
     methods: {
@@ -49,10 +48,8 @@ const miaApp = createApp({
             this.toDoList.unshift(addingTask);
             this.newTask= '';
         },
-        doneMarker(el) {
-            this.toDoList[el].done = !this.toDoList[el].done
+        doneMarker(i) {
+            this.toDoList[i].done = !this.toDoList[i].done
         }
-        
-
     }
 }).mount('#app');
